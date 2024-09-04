@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo da Loja</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: gold;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .logo {
+            text-align: center;
+        }
+
+        .logo img {
+            max-width: 200px;
+            height: auto;
+            border-radius: 2px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #000000;
+            margin-bottom: 2px;
+            font-size: 2.5em;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px;
+        }
+
+        .product {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .product h2 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .product label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+            color: #666;
+        }
+
+        .product select,
+        .product textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 0.9em;
+            background-color: #fafafa;
+            transition: border-color 0.3s ease;
+        }
+
+        .product select:focus,
+        .product textarea:focus {
+            border-color: gold;
+            outline: none;
+        }
+
+        .product button {
+            background-color: rgb(0, 250, 54);
+            color: #fff;
+            padding: 12px 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        .product button:hover {
+            background-color: rgb(11, 43, 11);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .product {
+                padding: 10px;
+            }
+
+            .product h2 {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+</header>
+    <div class="container">
+        <div class="logo">
+            <img src="gold black minimalist crown logo.png" alt="Logo da Loja">
+        <h1>Catálogo da Loja</h1>
+        <div class="product-grid">
+            <div class="product">
+                <img src="caneca normal.jpeg" alt="Caneca de porcelana branca">
+                <h2>Caneca de porcelana branca Personalizada: R$30,00</h2>
+                <label for="art-branca">Descreva a arte que deseja estampar:</label>
+                <textarea id="art-branca" placeholder="Digite aqui a sua descrição..."></textarea>
+                <button onclick="enviarPedido('Caneca de porcelana branca Personalizada', 30, '')">Fazer Pedido pelo Whatsapp</button>
+            </div>
+
+            <div class="product">
+                <img src="alça colorida.webp" alt="Caneca de porcelana Alça colorida">
+                <h2>Caneca de porcelana Alça colorida Personalizada: R$30,00</h2>
+                <label for="cor-alca-colorida">Escolha a cor da alça:</label>
+                <select id="cor-alca-colorida">
+                    <option value="Vermelha">Vermelha</option>
+                    <option value="Azul">Azul</option>
+                    <option value="Azul">Azul claro</option>
+                    <option value="Azul">Laranja</option> 
+                    <option value="Azul">Roxa</option>
+                    <option value="Verde">Verde</option>
+                    <option value="Preta">Preta</option>
+                </select>
+                <label for="art-colorida">Descreva a arte que deseja estampar:</label>
+                <textarea id="art-colorida" placeholder="Digite aqui a sua descrição..."></textarea>
+                <button onclick="enviarPedido('Caneca de porcelana Alça colorida Personalizada', 30, document.getElementById('cor-alca-colorida').value)">Fazer Pedido pelo Whatsapp</button>
+            </div>
+
+            <div class="product">
+                <img src="8cab137e02b6b04a58de62ec5d7ff21e.jpeg" alt="Caneca de porcelana Alça de Coração">
+                <h2>Caneca de porcelana Alça de Coração Personalizada: R$35,00</h2>
+                <label for="art-coracao">Descreva a arte que deseja estampar:</label>
+                <textarea id="art-coracao" placeholder="Digite aqui a sua descrição..."></textarea>
+                <button onclick="enviarPedido('Caneca de porcelana Alça de Coração Personalizada', 35, document.getElementById('cor-alca-coracao').value)">Fazer Pedido pelo Whatsapp</button>
+            </div>
+
+            <div class="product">
+                <img src="caneca-glitter-325ml-personalizada-273858.jpg" alt="Caneca de porcelana com Gliter">
+                <h2>Caneca de porcelana Com Gliter Personalizada: R$30,00</h2>
+                <label for="cor-gliter">Escolha a cor:</label>
+                <select id="cor-gliter">
+                    <option value="Prata">Rosa</option>
+                    <option value="Dourada">Dourada</option>
+                    <option value="Rosa">Prata</option>
+                </select>
+                <label for="art-gliter">Descreva a arte que deseja estampar:</label>
+                <textarea id="art-gliter" placeholder="Digite aqui a sua descrição..."></textarea>
+                <button onclick="enviarPedido('Caneca de porcelana Com Gliter Personalizada', 30, document.getElementById('cor-gliter').value)">Fazer Pedido pelo Whatsapp</button>
+            </div>
+
+            <div class="product">
+                <img src="arrafa-aluminio-squeeze-branco-600ml-mosquetao-01-loja-copos.webp" alt="Garrafa Térmica">
+                <h2>Garrafa Térmica Personalizada: R$40,00</h2>
+                <label for="art-garrafa">Descreva a arte que deseja estampar:</label>
+                <textarea id="art-garrafa" placeholder="Digite aqui a sua descrição..."></textarea>
+                <button onclick="enviarPedido('Garrafa Térmica Personalizada', 40, '')">Fazer Pedido pelo Whatsapp</button>
+            </div>
+
+            <div class="product">
+                <img src="20220606_0_148.jpg" alt="Camisa Poliester">
+                <h2>Camisa Poliester personalizada: R$35,00</h2>
+                <label for="tamanho-camisa">Escolha o tamanho:</label>
+                <select id="tamanho-camisa">
+                    <option value="P">P</option>
+                    <option value="M">M</option>
+                    <option value="G">G</option>
+                    <option value="GG">GG</option>
+                </select>
+                <label for="art-camisa">Descreva a arte que deseja estampar:</label>
+                <textarea id="art-camisa" placeholder="Digite aqui a sua descrição..."></textarea>
+                <button onclick="enviarPedido('Camisa Poliester personalizada', 35, document.getElementById('tamanho-camisa').value)">Fazer Pedido pelo Whatsapp</button>
+            </div>
+            <div class="product">
+                <img src="camiseta-71-1c43ed0bd603865b6b16007314893047-640-0.png" alt="Camisa Poliester">
+                <h2>Camisa Poliester Infantil personalizada: R$30,00</h2>
+                <label for="tamanho-camisa">Escolha o tamanho:</label>
+                <select id="tamanho-camisa">
+                    <option value="2">2</option>
+                    <option value="4">4</option>
+                    <option value="6">6</option>
+                    <option value="8">8</option>
+                    <option value="10">10</option>
+                    <option value="12">12</option>
+                    <option value="14">14</option>
+                </select>
+                <label for="art-camisa">Descreva a arte que deseja estampar:</label>
+                <textarea id="art-camisa" placeholder="Digite aqui a sua descrição..."></textarea>
+                <button onclick="enviarPedido('Camisa Poliester personalizada', 35, document.getElementById('tamanho-camisa').value)">Fazer Pedido pelo Whatsapp</button>
+            </div>
+
+            <div class="product">
+                <img src="quadro-mdf-a4-personalizado-data-aniversario-de-namoro-presente-criativo.webp" alt="Quadro MDF">
+                <h2>Quadro MDF A4 Personalizado: R$30,00</h2>
+                <label for="art-camisa">Descreva a arte que deseja estampar:</label>
+                <textarea id="art-camisa" placeholder="Digite aqui a sua descrição..."></textarea>
+                <button onclick="enviarPedido('Camisa Poliester personalizada', 35, document.getElementById('tamanho-camisa').value)">Fazer Pedido pelo Whatsapp</button>
+                <script>
+                    function enviarPedido(produto, preco, detalhe) {
+                        var descricao = '';
+                        var idArt = '';
+            
+                        switch(produto) {
+                            case 'Caneca de porcelana branca Personalizada':
+                                idArt = 'art-branca';
+                                break;
+                            case 'Caneca de porcelana Alça colorida Personalizada':
+                                idArt = 'art-colorida';
+                                break;
+                            case 'Caneca de porcelana Alça de Coração Personalizada':
+                                idArt = 'art-coracao';
+                                break;
+                            case 'Caneca de porcelana Com Gliter Personalizada':
+                                idArt = 'art-gliter';
+                                break;
+                            case 'Garrafa Térmica Personalizada':
+                                idArt = 'art-garrafa';
+                                break;
+                            case 'Camisa Poliester personalizada':
+                                idArt = 'art-camisa';
+                                break;
+                            case 'Quadro MDF Personalizado':
+                                idArt = 'art-quadro';
+                                break;
+                        }
+            
+                        descricao = document.getElementById(idArt).value;
+            
+                        var texto = `Olá, gostaria de pedir uma ${produto} no valor de R$${preco},00. Detalhes: ${detalhe}. Descrição da arte: ${descricao}.`;
+                        var url = `https://wa.me/5531993182624?text=${encodeURIComponent(texto)}`;
+                        window.open(url, '_blank');
+                    }
+                </script>
+            </body>
+            </html>
